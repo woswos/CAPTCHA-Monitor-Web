@@ -16,6 +16,17 @@ also contains external links to widely used Bootstrap and jQuery libraries.
 Additionally, `complex.html` has a few images. `complex.html` tries to
 simulate an ordinary web page that can be found on the internet.
 
+`captchamonitor.conf` is the configuration file used to configure the Nginx server.
+
 Feel free to create an issue if you have any suggestions.
 
-See https://gitlab.torproject.org/woswos/CAPTCHA-Monitor for the main project.
+_Note:_ Both [https://captcha.wtf](https://captcha.wtf) and [https://exit11.online](https://exit11.online)
+are the fronted by Cloudflare. [https://bypass.captcha.wtf](https://bypass.captcha.wtf)
+and [https://bypass.exit11.online](https://bypass.exit11.online) are not proxied by
+Cloudflare. See the screenshots below:
+
+![captcha.wtf configuration](./docs/captcha.wtf.png)
+![exit11.online configuration](./docs/exit11.online.png)
+
+See https://gitlab.torproject.org/woswos/CAPTCHA-Monitor/-/wikis/home for the 
+main project and further details.
