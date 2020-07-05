@@ -28,5 +28,18 @@ Cloudflare. See the screenshots below:
 ![captcha.wtf configuration](./docs/captcha.wtf.png)
 ![exit11.online configuration](./docs/exit11.online.png)
 
+## Installation
+1. Install Nginx
+2. Copy `captchamonitor.conf` into `/etc/nginx/sites-available`
+3. `ln -s /etc/nginx/sites-available/captchamonitor.conf /etc/nginx/sites-enabled/`
+4. Use `nginx -t` to confirm that the configuration file is working
+5. `systemctl restart nginx`
+6. Add Certbot PPA via `add-apt-repository ppa:certbot/certbot && apt-get update`
+7. Install Cerbot for Nginx via `apt-get install certbot python3-certbot-nginx`
+8. Run `certbot --nginx`
+9. Add SSL certificates to `bypass.captcha.wtf`, `bypass.exit11.online`, and 
+`dashboard.captcha.wtf`
+10. Choose "No redirect" when asked to redirect redirect HTTP traffic to HTTPS
+
 See https://gitlab.torproject.org/woswos/CAPTCHA-Monitor/-/wikis/home for the 
 main project and further details.
