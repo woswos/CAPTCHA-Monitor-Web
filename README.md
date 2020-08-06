@@ -2,31 +2,45 @@
 
 The files in this repository are the files used during the measurements.
 
-`index.html` is the file that is located at [https://captcha.wtf](https://captcha.wtf)
-and [https://exit11.online](https://exit11.online). `index.html` is used for the 
-measurements where a simple page that requires a single HTTP request to fetch. 
-It is a simple "Hello World!" example.
+`index.html` is the file that is located at `<domain>/index.html` and it is used 
+for the measurements where a simple page that requires a single HTTP 
+request to fetch. It is a simple "Hello World!" page.
 
-`complex.html` is the file that is located at 
-[https://captcha.wtf/complex.html](https://captcha.wtf/complex.html)
-and [https://exit11.online/complex.html](https://exit11.online/complex.html).
-`complex.html` is used for measurements
-where a complex page that requires multiple HTTP requests to fetch. This page
-also contains external links to widely used Bootstrap and jQuery libraries.
-Additionally, `complex.html` has a few images. `complex.html` tries to
-simulate an ordinary web page that can be found on the internet.
+`complex.html` is the file that is located at `<domain>/complex.html` and it is 
+used for measurements where a complex page that requires multiple HTTP requests 
+to fetch. This page also contains external links to widely used Bootstrap and 
+jQuery libraries. Additionally, `complex.html` has a few images. `complex.html` 
+tries to simulate an ordinary web page that can be found on the internet.
 
 `captchamonitor.conf` is the configuration file used to configure the Nginx server.
 
 Feel free to create an issue if you have any suggestions.
 
-_Note:_ Both [https://captcha.wtf](https://captcha.wtf) and [https://exit11.online](https://exit11.online)
-are the fronted by Cloudflare. [https://bypass.captcha.wtf](https://bypass.captcha.wtf)
-and [https://bypass.exit11.online](https://bypass.exit11.online) are not proxied by
-Cloudflare. See the screenshots below:
+## Cloudflare configurations of the domains used for testing
+### captcha.wtf
+![captcha.wtf DNS configuration](./docs/dns_captcha.wtf.png)
+![captcha.wtf firewall configuration](./docs/firewall_captcha.wtf.png)
 
-![captcha.wtf configuration](./docs/captcha.wtf.png)
-![exit11.online configuration](./docs/exit11.online.png)
+### yearlight.buzz
+![yearlight.buzz DNS configuration](./docs/dns_yearlight.buzz.png)
+![yearlight.buzz firewall configuration](./docs/firewall_yearlight.buzz.png)
+
+### bottomlesspit.xyz
+![bottomlesspit.xyz DNS configuration](./docs/dns_bottomlesspit.xyz.png)
+![bottomlesspit.xyz firewall configuration](./docs/firewall_bottomlesspit.xyz.png)
+
+### broccolipizza.monster
+![broccolipizza.monster DNS configuration](./docs/dns_broccolipizza.monster.png)
+![broccolipizza.monster firewall configuration](./docs/firewall_broccolipizza.monster.png)
+
+### exit11.online
+![exit11.online DNS configuration](./docs/dns_exit11.online.png)
+![exit11.online firewall configuration](./docs/firewall_exit11.online.png)
+
+### icanhazcaptcha.xyz
+![icanhazcaptcha.xyz DNS configuration](./docs/dns_icanhazcaptcha.xyz.png)
+![icanhazcaptcha.xyz firewall configuration](./docs/firewall_icanhazcaptcha.xyz.png)
+
 
 ## Installation
 1. Install Nginx
@@ -37,8 +51,8 @@ Cloudflare. See the screenshots below:
 6. Add Certbot PPA via `add-apt-repository ppa:certbot/certbot && apt-get update`
 7. Install Cerbot for Nginx via `apt-get install certbot python3-certbot-nginx`
 8. Run `certbot --nginx`
-9. Add SSL certificates to `bypass.captcha.wtf`, `bypass.exit11.online`, and 
-`dashboard.captcha.wtf`
+9. Add SSL certificates to `bypass.captcha.wtf`, `bypass.exit11.online`, 
+`dashboard.captcha.wtf`, and `api.captcha.wtf`
 10. Choose "No redirect" when asked to redirect redirect HTTP traffic to HTTPS
 
 See https://gitlab.torproject.org/woswos/CAPTCHA-Monitor/-/wikis/home for the 
